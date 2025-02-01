@@ -4,7 +4,7 @@ const connectDB = require('./connectDB');
 const cors = require('cors');
 //require('dotenv').config();
 
-//const authRoutes = require('./routes/authRoutes');
+const authRoutes = require('./routes/authRoutes');
 
 const app = express();
 app.use(express.json());
@@ -13,7 +13,7 @@ let items = [
   { id: 1, name: 'Item 1' },
   { id: 2, name: 'Item 2' },
 ];
-//app.use('/auth', authRoutes);
+app.use('/auth', authRoutes);
 
 app.get('/', (req, res) => {
   res.json(items);
