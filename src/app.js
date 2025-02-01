@@ -1,6 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser')
-//const connectDB = require('./connectDB');
+const connectDB = require('./connectDB');
 const cors = require('cors');
 //require('dotenv').config();
 
