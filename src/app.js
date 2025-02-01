@@ -22,7 +22,7 @@ app.get('/', (req, res) => {
 
 
 
-//connectDB();
+connectDB();
 //app.connectDB();
 //connectToDatabase();
 module.exports = app;
