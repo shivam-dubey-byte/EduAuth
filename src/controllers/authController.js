@@ -27,19 +27,19 @@ const login = async (req, res) => {
     const { email, password } = req.body;
 
     // Find user in DB
-    const user = await findUserByEmail(email);
-    if (!user) {
+    const users = await findUserByEmail(email);
+    if (!users) {
       return res.status(401).json({ error: 'Invalid email or password' });
     }
 
     // Compare passwords
-    const isMatch = await comparePassword(password, user.password);
+    const isMatch = await comparePassword(password, users.password);
     if (!isMatch) {
       return res.status(401).json({ error: 'Invalid email or password' });
     }
 
     // Generate JWT Token
-    const token = jwt.sign({ userId: user._id, email: user.email }, process.env.JWT_SECRET, {
+    const token = jwt.sign({ userId: users._id, email: users.email }, process.env.JWT_SECRET, {
       expiresIn: '1h',
     });
 
