@@ -1,4 +1,5 @@
 const express = require('express');
+const bodyParser = require('body-parser')
 //const connectDB = require('./connectDB');
 //const cors = require('cors');
 //require('dotenv').config();
@@ -8,11 +9,15 @@ const express = require('express');
 const app = express();
 app.use(express.json());
 //app.use(cors());
-
+let items = [
+  { id: 1, name: 'Item 1' },
+  { id: 2, name: 'Item 2' },
+];
 //app.use('/auth', authRoutes);
 
 app.get('/', (req, res) => {
-  res.send('Hello, World!');
+  res.json(items);
+  //res.send('Hello, World!');
 });
 
 
