@@ -71,7 +71,7 @@ const forgotPassword = async (req, res) => {
       //await user.save();
 
       // Send the reset token via email
-      const resetUrl = `http://localhost:3000/reset-password/${resetToken}`;
+      const resetUrl = `https://knowledgesun.quantumsoftdev.in/reset-password/${resetToken}`;
       await sendResetEmail(user.email, resetUrl);
 
       res.status(200).json({ message: 'Password reset email sent' });
