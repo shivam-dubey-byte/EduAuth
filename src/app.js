@@ -8,7 +8,12 @@ const authRoutes = require('./routes/authRoutes');
 
 const app = express();
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+  origin: "*", // Allow all origins, or specify your frontend's URL: 'http://localhost:3000'
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  allowedHeaders: ['Content-Type', 'Authorization']
+}));
+//app.use(cors());
 let items = [
   { id: 1, name: 'Item 1' },
   { id: 2, name: 'Item 2' },
