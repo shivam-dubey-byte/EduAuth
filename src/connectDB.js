@@ -1,6 +1,6 @@
 const { MongoClient, ServerApiVersion } = require('mongodb');
 
-const uri = "mongodb+srv://s1r9d11:iP6QSedJjLkmqT9y@edtech.kzpkk.mongodb.net/user?retryWrites=true&w=majority&appName=EdTech&tls=true";
+const uri = "mongodb+srv://mujtcp:ww9G5509iOrd5FWm@cluster0.zwbz3.mongodb.net/user";//"mongodb+srv://s1r9d11:iP6QSedJjLkmqT9y@edtech.kzpkk.mongodb.net/user?retryWrites=true&w=majority&appName=EdTech&tls=true";
 
 const connectDB = async () => {
   try { //process.env.MONGO_URI
