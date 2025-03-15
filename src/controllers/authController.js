@@ -18,7 +18,7 @@ const signup = async (req, res) => {
     // Create new user
     const userId = await createUser(email, password);
     // Generate JWT Token
-    const token = jwt.sign({ userId: users._id, email: users.email }, process.env.JWT_SECRET, {
+    const token = jwt.sign({ userId: userId._id, email: userId.email }, 'shivam', {
       expiresIn: '1h',
     });
     res.status(201).json({ message: 'User signed up successfully', token });
