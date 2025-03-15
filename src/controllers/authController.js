@@ -17,7 +17,11 @@ const signup = async (req, res) => {
 
     // Create new user
     const userId = await createUser(email, password);
-    res.status(201).json({ message: 'User signed up successfully', userId });
+    // Generate JWT Token
+    const token = jwt.sign({ userId: users._id, email: users.email }, process.env.JWT_SECRET, {
+      expiresIn: '1h',
+    });
+    res.status(201).json({ message: 'User signed up successfully', token });
   } catch (error) {
     res.status(500).json({ error: 'Server error' });
   }
